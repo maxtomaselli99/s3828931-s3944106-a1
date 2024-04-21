@@ -8,14 +8,14 @@ import { useState } from "react";
 
 
 function App() {
-    const [BananaDiscount = 20, setBananaDiscount] = useState();
-    const [PotatoDiscount = 12, setPotatoDiscount] = useState();
-    const [CherryDiscount = 50, setCherryDiscount] = useState();
+    const [Banana = [20, 3], setBanana] = useState();
+    const [Potato = [30, 1], setPotato] = useState();
+    const [Cherry = [50, 10], setCherry] = useState();
     useState(() => {
-        localStorage.setItem('Banana', JSON.stringify(BananaDiscount));
-        localStorage.setItem('Potato', JSON.stringify(PotatoDiscount));
-        localStorage.setItem('Cherry', JSON.stringify(CherryDiscount));
-    }, [BananaDiscount]);
+        localStorage.setItem('Banana', JSON.stringify(Banana));
+        localStorage.setItem('Potato', JSON.stringify(Potato));
+        localStorage.setItem('Cherry', JSON.stringify(Cherry));
+    }, [Banana, Potato, Cherry]);
 
     return (
       <div>
