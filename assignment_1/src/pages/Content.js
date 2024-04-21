@@ -22,7 +22,7 @@ const Content = () => {
                     <div class="px-4 py-3 w-72">
                         <p class="text-lg font-bold text-black truncate block capitalize">Bananas</p>
                             <p class="text-lg font-bold text-red-500 truncate block capitalize">{Banana[0] + "% off"}</p>
-                            <p class="text-lg  text-black truncate block ">{"Was $" + Banana[1] +" now $" + (Banana[1] - Banana[1]*Banana[0]/100) + " each"}</p>
+                            <p class="text-lg text-black truncate block ">{"Was $" + Banana[1] +" now $" + (Banana[1] - Banana[1]*Banana[0]/100) + " each"}</p>
                             <p class="py-3 px-14 text-lg font-bold text-black truncate block capitalize"><button onClick={() => {
                                 tempCart = JSON.parse(localStorage.getItem("Cart"));
                                 tempCart[0] += 1;
@@ -36,7 +36,7 @@ const Content = () => {
                     <div class="px-4 py-3 w-72">
                         <p class="text-lg font-bold text-black truncate block capitalize">Potatoes</p>
                             <p class="text-lg font-bold text-red-500 truncate block capitalize">{Potato[0] + "% off"}</p>
-                            <p class="text-lg  text-black truncate block ">{"Was $" + Potato[1] + " now $" + (Potato[1] - Potato[1] * Potato[0] / 100) + " each"}</p>
+                            <p class="text-lg text-black truncate block ">{"Was $" + Potato[1] + " now $" + (Potato[1] - Potato[1] * Potato[0] / 100) + " each"}</p>
                             <p class="py-3 px-14 text-lg font-bold text-black truncate block capitalize"><button onClick={() => {
                                 tempCart = JSON.parse(localStorage.getItem("Cart"));
                                 tempCart[1] += 1;
@@ -49,7 +49,7 @@ const Content = () => {
                     <div class="px-4 py-3 w-72">
                         <p class="text-lg font-bold text-black truncate block capitalize">Cherries</p>
                             <p class="text-lg font-bold text-red-500 truncate block capitalize">{Cherry[0] + "% off"}</p>
-                            <p class="text-lg  text-black truncate block">{"Was $" + Cherry[1] + " now $" + (Cherry[1] - Cherry[1] * Cherry[0] / 100) +" a box"}</p>
+                            <p class="text-lg text-black truncate block">{"Was $" + Cherry[1] + " now $" + (Cherry[1] - Cherry[1] * Cherry[0] / 100) +" a box"}</p>
                             <p class="py-3 px-14 text-lg font-bold text-black truncate block capitalize"><button onClick={() => {
                                 tempCart = JSON.parse(localStorage.getItem("Cart"));
                                 tempCart[2] += 1;

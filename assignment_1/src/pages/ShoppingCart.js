@@ -8,9 +8,13 @@ const Cart = () => {
     let tempCart = [];
     return (
         <div>
+            <div className="py-5 grid mx-auto grid-cols-3 grod-flow-col rounded bg-white shadow-md">
+                <div class="px-4">Name</div>
+                <div>Amount</div>
+            </div>
             {Cart[0] > 0 &&
-                <div className="grid mx-auto grid-cols-3 grod-flow-col">
-                    <div>Banana</div>
+                <div className="py-5 grid mx-auto grid-cols-3 grod-flow-col rounded bg-white shadow-md">
+                    <div class="px-4">Banana</div>
                     <div>{Cart[0]}</div>
                     <button onClick={() => {
                         tempCart = JSON.parse(localStorage.getItem("Cart"));
@@ -21,8 +25,8 @@ const Cart = () => {
                 </div>
             }
             {Cart[1] > 0 &&
-                <div className="grid mx-auto grid-cols-3 grod-flow-col">
-                    <div>Potato</div>
+                <div className="py-5 grid mx-auto grid-cols-3 grod-flow-col rounded bg-white shadow-md">
+                    <div class="px-4">Potato</div>
                     <div>{Cart[1]}</div>
                     <button onClick={() => {
                         tempCart = JSON.parse(localStorage.getItem("Cart"));
@@ -33,8 +37,8 @@ const Cart = () => {
                 </div>
             }
             {Cart[2] > 0 &&
-                <div className="grid mx-auto grid-cols-3 grod-flow-col">
-                    <div>Cherry</div>
+                <div className="py-5 grid mx-auto grid-cols-3 grod-flow-col rounded bg-white shadow-md">
+                    <div class="px-4">Cherry</div>
                     <div>{Cart[2]}</div>
                     <button onClick={() => {
                         tempCart = JSON.parse(localStorage.getItem("Cart"));
@@ -45,11 +49,11 @@ const Cart = () => {
                 </div>
             }
             {(((Cart[0] > 0) || Cart[1] > 0) || Cart[2] > 0) &&
-                <div className="grid mx-auto grid-cols-3 grod-flow-col">
-                    <div>Total</div>
-                    <div>{"$" + (Cart[0] * (Banana[1] - Banana[1] * Banana[0] / 100) +
+                <div className="py-5 grid mx-auto grid-cols-3 grod-flow-col rounded bg-white shadow-md">
+                    <div class="px-4">Total</div>
+                    <div>{"$" + parseFloat((Cart[0] * (Banana[1] - Banana[1] * Banana[0] / 100) +
                         (Cart[1] * (Potato[1] - Potato[1] * Potato[0] / 100)) +
-                        (Cart[2] * (Cherry[1] - Cherry[1] * Cherry[0] / 100)))}</div>
+                        (Cart[2] * (Cherry[1] - Cherry[1] * Cherry[0] / 100)))).toFixed(2)}</div>
                     <button onClick={() => {
                         tempCart = JSON.parse(localStorage.getItem("Cart"));
                         tempCart = [0,0,0]
