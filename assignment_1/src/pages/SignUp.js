@@ -12,7 +12,6 @@ import {
 // interface for form data
 export default function Signup() {
     const [formData, setFormData] = useState({
-        username: "",
         name: "",
         email: "",
         password: "",
@@ -34,7 +33,7 @@ export default function Signup() {
         return () => {
             document.removeEventListener("click", clearMessage);
         };
-    }, []); // Empty dependency array to run this effect only once when the component mounts
+    }, []);
 
     // updates form data when user types
     const handleChange = (e) => {
@@ -58,14 +57,6 @@ export default function Signup() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Generate a UUID for userID
-        const userID = uuidv4();
-
-        // Add userID to the formData
-        const formDataWithUserID = {
-            ...formData,
-            userID,
-        };
 
         if (localStorage.getItem(formData.email) != null) {
             setMessage(
@@ -87,7 +78,7 @@ export default function Signup() {
             return;
         }
         
-
+        //make user
         var userObj = {
             username: formData.username,
             email: formData.email,
@@ -95,10 +86,11 @@ export default function Signup() {
             name: formData.name,
             dateJoined: getCurrentDate(),
         }
+        // Send the user data to storage
         localStorage.setItem(formData.email, JSON.stringify(userObj));
         localStorage.setItem("LoggedUser", formData.email);
         window.location.href = "/";
-        // Send the form data to the server
+        
         
     };
 
@@ -107,20 +99,6 @@ export default function Signup() {
             <div className="bg-white p-8 rounded-lg shadow-md w-96 mb-40 text-center">
                 <h2 className="text-2xl font-semibold mb-4 text-black">Sign Up</h2>
                 <form onSubmit={handleSubmit}>
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-                            Username
-                        </label>
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            className="w-full border rounded-md py-2 px-3 text-gray-700"
-                            placeholder="Username"
-                            value={formData.username}
-                            onChange={handleChange}
-                        />
-                    </div>
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                             Name

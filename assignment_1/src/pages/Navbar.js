@@ -38,7 +38,7 @@ const Navbar = () => {
                       <ul class="list-style-none flex lg:flex-row gap-4">
                         {loggedUser ? (
                           <>
-                            <a class="text-white/60 underline" href="#">Profile</a>
+                            <Link class="text-white/60 underline" to="/Profile">Profile</Link>
                             <button
                               className="text-white/60 underline"
                               onClick={handleLogout}

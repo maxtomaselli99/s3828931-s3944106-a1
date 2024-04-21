@@ -2,12 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 
-
-// used to validate user input
-import {
-    isValidEmail,
-    isStrongPassword,
-} from './validation';
 import { Link } from "react-router-dom";
 
 export default function Signin() {

@@ -1,8 +1,9 @@
 import './App.css';
 import Header from './pages/Header';
 import Navbar from './pages/Navbar';
-import Content from './pages/Content';
+import Profile from './pages/Profile';
 import Footer from './pages/Footer';
+import EditProfile from './pages/EditProfile';
 import Home from './pages/Home';
 import Sidebar from './pages/Sidebar';
 import Signin from './pages/SignIn';
@@ -36,6 +37,8 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/SignIn" element={<Signin />} />
                 <Route path="/SignUp" element={<Signup />} />
+                <Route path="/Profile" element={<Profile />} />
+                <Route path="/EditProfile" element={<EditProfile />} />
 
             </Routes>
             </Router>
