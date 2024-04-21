@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 
-import logo from '../logo.svg';
-import Signin from "./SignIn";
+import Cart from './ShoppingCart';
 
 const Navbar = () => {
-
+  const [open, setOpen] = useState(false);
   const [loggedUser, setLoggedUser] = React.useState("");
     useEffect(() => {
       // Perform localStorage action
@@ -16,7 +15,7 @@ const Navbar = () => {
     // set loggedUser to null in localStorage
     localStorage.setItem("LoggedUser", "");
     // Refresh the component by forcing a page reload
-    window.location.reload();
+    window.location.href = "/";
 };
 
 

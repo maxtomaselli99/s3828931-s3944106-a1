@@ -58,7 +58,7 @@ const Cart = () => {
                         Clear?</button>
                 </div>
             }
-            {Cart[0] == 0 && Cart[1] == 0 && Cart[2] == 0 &&
+            {Cart[0] === 0 && Cart[1] === 0 && Cart[2] === 0 &&
                 <div>
                     <div>Cart is Empty</div>
                 </div>
