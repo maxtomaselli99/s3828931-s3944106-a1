@@ -19,6 +19,7 @@ const Navbar = () => {
     window.location.reload();
 };
 
+
   return (
         <nav
             class="flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
@@ -26,9 +27,12 @@ const Navbar = () => {
                 
                 <div>
                     <ul class="list-style-none flex lg:flex-row gap-4">
+
                       <Link className="text-white/60 underline" to="/">Home</Link>
-                      <a class="text-white/60 underline" href="#">Store</a>
-                      <a class="text-white/60 underline" href="#">Our Goals</a>
+
+                      <button class="text-white/60 underline">Store</button>
+                      <button class="text-white/60 underline">Our Goals</button>
+
                     </ul>
                 </div>
 
@@ -36,6 +40,7 @@ const Navbar = () => {
                 <div class="relative flex items-center">
                   <div>
                       <ul class="list-style-none flex lg:flex-row gap-4">
+
                         {loggedUser ? (
                           <>
                             <Link class="text-white/60 underline" to="/Profile">Profile</Link>
@@ -51,9 +56,14 @@ const Navbar = () => {
                             <Link className="text-white/60 underline" to="/SignIn">Sign in</Link>
                           </>
                         )}
-                          {/* <a class="text-white/60 underline" href="#">Profile</a>
-                          <Link className="text-white/60 underline" to="/SignIn">Sign in</Link> */}
-                          <a class="text-white/60 underline" href="#">Shopping Cart</a>
+
+                          <button onClick={() => setOpen(!open)} class="text-white/60 underline">Shopping Cart</button>
+                          {open && (
+                              <div class="bg-white shadow-md">
+                                  <Cart></Cart>
+                              </div>
+                          ) }
+
                       </ul>
                   </div>
                 </div>
