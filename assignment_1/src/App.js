@@ -3,8 +3,18 @@ import Header from './pages/Header';
 import Navbar from './pages/Navbar';
 import Content from './pages/Content';
 import Footer from './pages/Footer';
+import Home from './pages/Home';
 import Sidebar from './pages/Sidebar';
+import Signin from './pages/SignIn';
+import Signup from './pages/SignUp';
 import { useState } from "react";
+import {
+    BrowserRouter as Router,
+    redirect,
+    Routes,
+    Route,
+    Navigate,
+} from "react-router-dom";
 
 
 function App() {
@@ -20,11 +30,20 @@ function App() {
     return (
       <div>
           <Header></Header>
-          <Navbar></Navbar>
-          <div className="grid mx-auto grid-cols-4 grod-flow-col">
+          <Router>
+            <Navbar /> 
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/SignIn" element={<Signin />} />
+                <Route path="/SignUp" element={<Signup />} />
+
+            </Routes>
+            </Router>
+          {/* <div className="grid mx-auto grid-cols-4 grod-flow-col">
               <Content></Content>
               <Sidebar></Sidebar>
-          </div>
+          </div> */}
+          <redirect from='/' to='/Home' />
           <Footer></Footer>
       </div>
   );
