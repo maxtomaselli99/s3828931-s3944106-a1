@@ -63,7 +63,7 @@ const Cart = () => {
                 </div>
             }
             {Cart[0] == 0 && Cart[1] == 0 && Cart[2] == 0 &&
-                <div>
+                <div className="py-5 grid mx-auto grid-cols-3 grod-flow-col rounded bg-white shadow-md">
                     <div>Cart is Empty</div>
                 </div>
             }
