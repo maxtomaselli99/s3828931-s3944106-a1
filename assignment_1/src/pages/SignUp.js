@@ -17,6 +17,8 @@ export default function Signup() {
         password: "",
     });
 
+    const [showConfirmation, setShowConfirmation] = useState(false);
+
     // initialises message for future display
     const [message, setMessage] = useState("");
 
@@ -85,11 +87,15 @@ export default function Signup() {
             password: formData.password,
             name: formData.name,
             dateJoined: getCurrentDate(),
+            bio: "Tell us about yourself with by editing your profile!",
         }
         // Send the user data to storage
         localStorage.setItem(formData.email, JSON.stringify(userObj));
         localStorage.setItem("LoggedUser", formData.email);
-        window.location.href = "/";
+        setShowConfirmation(true);
+        setTimeout(() => {
+            window.location.href = "/Profile";
+        }, 2000);
         
         
     };
@@ -157,6 +163,14 @@ export default function Signup() {
                     <div className="text-red-500 text-sm">{message}</div>
                 </form>
             </div>
+            {showConfirmation && (
+                <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+                    <div className="bg-white p-4 rounded-lg shadow-md">
+                        <p className="text-lg font-semibold text-center">Successfully signed up!</p>
+                        {/* You can add additional content or actions for the popup */}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
